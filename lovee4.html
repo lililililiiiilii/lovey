@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="stylesheet" href="love3.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffebee;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 450px;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart {
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .heart:active {
+            transform: scale(1.4);
+        }
+        .note {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            width: 100%;
+            padding: 20px;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            box-sizing: border-box;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .heart-floating {
+            position: absolute;
+            bottom: 0;
+            font-size: 24px;
+            opacity: 0;
+            animation: floatUp 3s linear infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .card {
+                width: 95%;
+                padding: 15px;
+            }
+            .title {
+                font-size: 18px;
+            }
+            .note {
+                font-size: 14px;
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        let isExpanded = false;
+
+        function toggleMessage() {
+            const card = document.querySelector('.card');
+            const note = document.querySelector('.note');
+            const heart = document.querySelector('.heart');
+
+            if (!isExpanded) {
+                card.style.maxWidth = '800px';
+                note.style.display = 'block';
+                setTimeout(() => {
+                    note.style.opacity = '1';
+                }, 100);
+                heart.style.animation = 'heartbeat 1s infinite';
+                createFloatingHearts();
+            } else {
+                card.style.maxWidth = '450px';
+                note.style.opacity = '0';
+                setTimeout(() => {
+                    note.style.display = 'none';
+                }, 500);
+                heart.style.animation = 'none';
+            }
+            isExpanded = !isExpanded;
+        }
+
+        function createFloatingHearts() {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = "❤️";
+                    heart.classList.add('heart-floating');
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }, i * 300);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="heart" onclick="toggleMessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" width="80px" height="80px">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="title">Happy Valentine's Day, My Love!</div>
+        <div class="note">
+            <p>Ang bilis ng panahon—it's almost six months since we met, and I’m still deeply in love with you. Knowing you is the best thing that ever happened to me. You are my cutie, pretty, and super lambing love na mahilig sa kiss, and no one can ever change how much I love and cherish you.</p>
+            <p>Mahal, I know I mess up sometimes, and I may unintentionally hurt you. Hindi ko gustong gawin yun, and I’m truly sorry. Minsan, when my emotions get confused, I say things without thinking, and that’s something I hate about myself, but I’m really trying my best to improve for you and for us. Ayokong masaktan ka in any way because you are too precious to me.</p>
+            <p>You're my girlfriend, and that will never change. Pasensya na, love, kung minsan nauuna pa yung tampo ko kaysa sa pag-intindi sayo, and sometimes I don’t immediately realize that you’re just teasing me. Alam ko, masyado akong emotional minsan, pero hindi ko talaga intensyon na masaktan ka, and I will always do my best to understand and adjust for you.</p>
+            <p>Love, I’m really thankful na ikaw ang girlfriend ko, and kahit hindi pa tayo magkasama ngayon, I want you to know how much I appreciate you. Pero darating din yung time na we’ll finally be together, we’ll do the things we planned, and I’ll show you how much I love you. I can’t wait for us to live in the same house, mahal, because I want to take care of you, spoil you, and make you feel loved every single day.</p>
+            <p>Since love mo ako, I’m going to bite your cheeks, love, kasi ang cute mo, lalo na lips mo—bleee! I want to play with your hair, cuddle with you, go on dates, do the things you love, massage you when you need it, and serve you in any way that makes you happy. Your happiness and smile mean everything to me, and I appreciate you always.</p>
+            <p>Kahit minsan may tampuhan tayo, I understand, love, and what’s important to me is that we continue to learn from each other. We’ve both changed and adjusted, and I love how we keep growing together.</p>
+            <p>I will always do my best for us and for our future. Ikaw pa ba? Ang lakas mo sakin! Mwaaa!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

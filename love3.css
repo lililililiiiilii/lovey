@@ -1,0 +1,15 @@
+.note {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: left;
+    max-height: 400px; /* Adjust this height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+}

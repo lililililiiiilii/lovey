@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link rel="stylesheet" href="shop.css" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #ffebee;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            text-align: center;
+        }
+        .gif-container img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #d81b60;
+        }
+        .continue-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #e91e63;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .continue-btn:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="img/lovee.gif" alt="Happy Valentine's Day GIF">
+    </div>
+    <div class="title">Happy Valentine's Day! lovey</div>
+    <button class="continue-btn" onclick="window.location.href='lovee2.html'">Continue</button>
+</body>
+</html>
+
